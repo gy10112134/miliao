@@ -45,7 +45,7 @@ export default class Type extends Component {
             dataBlob: [],
             images: [],
             showFooter: true,
-            modalVisible: false
+            modalVisible: true
         };
 
         this._fetchData = this._fetchData.bind(this)
@@ -61,8 +61,7 @@ export default class Type extends Component {
                     barStyle="light-content"
                 />
 
-                <Modal visible={this.state.modalVisible} transparent={true} onrequestclose={() => {
-                }}>
+                <Modal visible={this.state.modalVisible} transparent={true} onRequestClose={()=>{this.onRequestClose()}}>
                     <Text style={styles.backStyle} transparent={true} onPress={this._closeModal.bind(this)}>返回</Text>
                     <ImageViewer imageUrls={this.state.images}>
                     </ImageViewer>
@@ -91,6 +90,10 @@ export default class Type extends Component {
                 />
             </View>
         );
+    }
+
+    onRequestClose(){
+        alert("Modal has been open.")
     }
 
     _closeModal() {
