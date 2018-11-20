@@ -6,6 +6,7 @@ import Home from './tabPage/Home';
 import Type from './tabPage/Type';
 import ShopCar from './tabPage/Message';
 import Mine from './tabPage/Mine';
+import WebViewPage from './page/WebViewPage';
 
 const Tab = TabNavigator({
     Home: {
@@ -57,7 +58,6 @@ const Tab = TabNavigator({
         navigationOptions: {
             //stackNavigator的属性
             headerTitle: '消息',
-
             gestureResponseDistance: {horizontal: 300},
             headerBackTitle: null,
             headerStyle: {backgroundColor: '#cf2ceb'},//导航栏的样式
@@ -83,7 +83,6 @@ const Tab = TabNavigator({
         navigationOptions: {
             //stackNavigator的属性
             headerTitle: '我的',
-
             gestureResponseDistance: {horizontal: 300},
             headerBackTitle: null,
             headerStyle: {backgroundColor: '#cf2ceb'},//导航栏的样式
@@ -119,5 +118,8 @@ const Tab = TabNavigator({
 export default Navi = StackNavigator({
     Tab: {
         screen: Tab
+    },
+    WebViewPage: {
+        screen: WebViewPage,
     },
 });
